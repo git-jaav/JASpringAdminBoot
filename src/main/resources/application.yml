@@ -1,0 +1,42 @@
+###################### GENERAL ####################
+###################################################
+server:
+  port: ${ADMINBOOT_SERVER_PORT}
+
+spring:
+  profiles: prod
+  application:
+    name: ja-config-server
+
+## Security config
+  security:
+    user:
+      name: ${ADMINBOOT_SERVER_SECUR_USER_NAME}
+      password: ${ADMINBOOT_SERVER_SECUR_USER_PASSWORD}
+## Email Notifications Config
+## Host for the email server
+  boot:
+    admin:
+      notify:
+        mail:
+          enabled: true
+          to: ${ADMINBOOT_SERVER_NOTIFYMAIL_TO}
+
+  mail:
+    host: ${ADMINBOOT_SERVER_MAIL_HOST}
+    port: ${ADMINBOOT_SERVER_MAIL_PORT}
+    username: ${ADMINBOOT_SERVER_MAIL_USER}
+    password: ${ADMINBOOT_SERVER_MAIL_PASSWORD}
+    protocol: ${ADMINBOOT_SERVER_MAIL_PROTOCOL}
+
+ ## Whether email connection has to test on application startup or not
+    test-connection:  true
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+
+  ## Comma separated list of email ids to which email notification should be sent
+
+
