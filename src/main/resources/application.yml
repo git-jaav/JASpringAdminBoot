@@ -19,7 +19,7 @@ spring:
     admin:
       notify:
         mail:
-          enabled: true
+          enabled: ${ADMINBOOT_SERVER_NOTIFYMAIL_ENABLED}
           to: ${ADMINBOOT_SERVER_NOTIFYMAIL_TO}
 
   mail:
@@ -30,7 +30,7 @@ spring:
     protocol: ${ADMINBOOT_SERVER_MAIL_PROTOCOL}
 
  ## Whether email connection has to test on application startup or not
-    test-connection:  true
+    test-connection: ${ADMINBOOT_SERVER_MAIL_TESTCONNECT}
     properties:
       mail:
         smtp:
