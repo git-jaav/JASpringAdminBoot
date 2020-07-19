@@ -4,7 +4,7 @@ Custom Spring Admin Boot
 
 ## RUN DOCKER ADMIN - BOOT  
 
-#Valores de ejemplo:
+# Valores de ejemplo:
 
 docker run -d -t --network host -w "/workspace/logs-api" \
 -e ADMINBOOT_SERVER_PORT="9999" \
