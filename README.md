@@ -2,9 +2,17 @@
 
 Custom Spring Admin Boot
 
-# RUN DOCKER ADMIN - BOOT  
+## build container and tag it  (get the [id_image]):
 
-## Valores de ejemplo:
+docker build -f Dockerfile .
+docker tag [id_image] api-demo
+
+## build container and set a repository name
+docker build -f Dockerfile .  -t [repository_name]
+
+# RUN DOCKER ADMIN - BOOT
+
+## Example values - NETWORK HOST MODO (Taking port from propertie file or env. variable. No se incluye -p 8099:9999 )
 
 docker run -d -t --network host -w "/workspace/logs-api" \
 -e ADMINBOOT_SERVER_PORT="9999" \
@@ -20,4 +28,4 @@ docker run -d -t --network host -w "/workspace/logs-api" \
 -e ADMINBOOT_SERVER_NOTIFYMAIL_ENABLED="true" \
 -e BUILD_PROFILE="prod" \
  021dad090253 \
---net=host -p 8099:9999 
+--net=host
